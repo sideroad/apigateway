@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+var opts = require('opts');
+
+opts.parse([
+  {
+    'short': 'c',
+    'long': 'config-dir',
+    'description': 'config directory',
+    'value': true,
+    'required': true
+  },
+  {
+    'short': 'p',
+    'long': 'port',
+    'description': 'server port ( default port 3000)',
+    'value': true,
+    'required': false
+  }
+]);
+
+require('../index')(opts.get('config-dir'), opts.get('port'));

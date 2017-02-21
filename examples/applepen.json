@@ -1,0 +1,22 @@
+{
+  "uri": "/applepen/:id",
+  "method": "get",
+  "req": {
+    "pen": {
+      "url": "https://chaus.herokuapp.com/apis/apigateway/pens/:params.id",
+      "req": {
+        "name": "query.name",
+        "token": "cookies.token"
+      }
+    },
+    "apple": {
+      "url": "https://chaus.herokuapp.com/apis/apigateway/apples/:params.id"
+    }
+  },
+  "res": {
+    "id": "pen.id",
+    "pen": "pen.name",
+    "apple": "apple.name",
+    "taste": "apple.taste"
+  }
+}
